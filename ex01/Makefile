@@ -3,7 +3,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 RM = rm -f
 
-SRC = ClapTrap.cpp\
+SRC = ClapTrap.cpp ScavTrap.cpp\
 
 MAIN = main.cpp
 

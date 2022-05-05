@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 10:10:01 by nfernand          #+#    #+#             */
-/*   Updated: 2022/05/05 11:17:15 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/05/05 16:32:22 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ using std::endl;
 ClapTrap::ClapTrap(string name)
 {
 	setName(name);
-	cout << "Allow me to introduce myself - I am a CL4P-TP steward bot, but my friends call me " YELLOW "<"
+	cout << "Allow me to introduce myself - I am a" BLUE " <CL4P-TP> " RESET
+		"steward bot, but my friends call me " YELLOW "<"
 		<< name << ">" RESET "." << endl;
 	setHealthPoints(10);
 	setEnergyPoints(10);
