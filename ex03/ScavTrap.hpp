@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 11:58:15 by nfernand          #+#    #+#             */
-/*   Updated: 2022/05/05 16:38:36 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/05/11 17:12:14 by nazrinsha        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,18 @@
 
 using std::string;
 
-class	ScavTrap: public ClapTrap
+class	ScavTrap: virtual public ClapTrap
 {
 	public:
 		ScavTrap(string name);
 		~ScavTrap();
 	
 		void	guardGate(void);
+		void	attack(const string &target, const string name);
+	
+	protected:
+		ScavTrap(void);
+
 
 	private:
 		bool	_guard_gate_mode;

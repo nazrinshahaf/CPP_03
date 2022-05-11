@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 10:10:01 by nfernand          #+#    #+#             */
-/*   Updated: 2022/05/05 16:32:22 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/05/06 11:02:47 by nazrinsha        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,16 @@ ClapTrap::ClapTrap(string name)
 	setHealthPoints(10);
 	setEnergyPoints(10);
 	setAttackDamage(0);
-	cout << endl;
+}
+
+ClapTrap::ClapTrap(void)
+{
+	setName("");
+	cout << "Allow me to introduce myself - I am a" BLUE " <CL4P-TP> " RESET
+		"steward bot. Who am I? Am i god?" << endl;
+	setHealthPoints(10);
+	setEnergyPoints(10);
+	setAttackDamage(0);
 }
 
 ClapTrap::~ClapTrap()
@@ -52,8 +61,10 @@ void	ClapTrap::takeDamage(unsigned int value)
 	if (this->getHealthPoints() > 0)
 	{
 		this->setHealthPoints(this->getHealthPoints() - value);
-		cout << "CL4P-TP" << this->getName() << "takes " << value 
-			<< "points of damage" << endl;
+		cout << "CL4P-TP " << this->getName() << " takes " << value 
+			<< " points of damage" << endl;
+		cout << "CL4P-TP " << this->getName() << " has " << this->getHealthPoints()
+			<< " HP left" << endl;
 	}
 }
 
@@ -107,6 +118,6 @@ void	ClapTrap::setEnergyPoints(unsigned int value)
 
 void	ClapTrap::setAttackDamage(unsigned int value)
 {
-	cout << YELLOW "<"<< this->getName() << "> " RESET "attack damage has been set to " RED << value << RESET <<  endl;
+	//cout << YELLOW "<"<< this->getName() << "> " RESET "attack damage has been set to " RED << value << RESET <<  endl;
 	this->_attack_damage = value;
 }
