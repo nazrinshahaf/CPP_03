@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 10:10:01 by nfernand          #+#    #+#             */
-/*   Updated: 2022/06/13 16:17:05 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:51:39 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ int		ClapTrap::getAttackDamage(void) const
 
 void	ClapTrap::setName(string const name)
 {
-	cout << YELLOW "<"<< this->_name << "> " RESET "health points has been set to " RED << name << RESET <<  endl;
+	cout << YELLOW "<"<< this->_name << "> " RESET "name has been set to " RED << name << RESET <<  endl;
 	this->_name = name;
 }
 
