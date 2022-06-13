@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 12:05:27 by nfernand          #+#    #+#             */
-/*   Updated: 2022/05/11 17:12:07 by nazrinsha        ###   ########.fr       */
+/*   Updated: 2022/06/13 18:40:21 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ ScavTrap::ScavTrap(void)
 	setEnergyPoints(50);
 	setAttackDamage(20);
 	this->_guard_gate_mode = 0;
+	cout << "ScavHP: " << ScavTrap::_healh_points << endl;
+	cout << "ScavEn: " << ScavTrap::_energy_points << endl;
+	cout << "ScavAD: " << ScavTrap::_attack_damage << endl;
 }
 
 ScavTrap::~ScavTrap()

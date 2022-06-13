@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:09:45 by nfernand          #+#    #+#             */
-/*   Updated: 2022/05/11 17:00:20 by nazrinsha        ###   ########.fr       */
+/*   Updated: 2022/06/13 18:40:13 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ FragTrap::FragTrap(void)
 	setHealthPoints(100);
 	setEnergyPoints(100);
 	setAttackDamage(30);
+	cout << "FragHP: " << FragTrap::_healh_points << endl;
+	cout << "FragEn: " << FragTrap::_energy_points << endl;
+	cout << "FragAD: " << FragTrap::_attack_damage << endl;
 }
 
 FragTrap::~FragTrap()

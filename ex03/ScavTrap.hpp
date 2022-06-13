@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 11:58:15 by nfernand          #+#    #+#             */
-/*   Updated: 2022/05/11 17:12:14 by nazrinsha        ###   ########.fr       */
+/*   Updated: 2022/06/13 18:08:22 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class	ScavTrap: virtual public ClapTrap
 	
 	protected:
 		ScavTrap(void);
-
 
 	private:
 		bool	_guard_gate_mode;

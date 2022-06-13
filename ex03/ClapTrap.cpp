@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 10:10:01 by nfernand          #+#    #+#             */
-/*   Updated: 2022/05/06 11:02:47 by nazrinsha        ###   ########.fr       */
+/*   Updated: 2022/06/13 18:40:04 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ ClapTrap::ClapTrap(void)
 	setHealthPoints(10);
 	setEnergyPoints(10);
 	setAttackDamage(0);
+	cout << "ClapHP: " << ClapTrap::_healh_points << endl;
+	cout << "ClapEn: " << ClapTrap::_energy_points << endl;
+	cout << "ClapAD: " << ClapTrap::_attack_damage << endl;
 }
 
 ClapTrap::~ClapTrap()

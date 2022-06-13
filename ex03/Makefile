@@ -1,6 +1,7 @@
 NAME = Fixed
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+EFLAGS = -Wshadow -Wno-shadow
 RM = rm -f
 
 SRC = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp\
@@ -8,7 +9,7 @@ SRC = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp\
 MAIN = main.cpp
 
 $(NAME):
-	$(CC) $(CFLAGS) $(MAIN) $(SRC) -o $(NAME)
+	$(CC) $(CFLAGS) $(EFLAGS) $(MAIN) $(SRC) -o $(NAME)
 
 all: $(NAME)
 
