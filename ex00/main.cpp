@@ -95,11 +95,17 @@ int	main()
 			e->setAttackDamage(1923);
 			cout << endl;
 
+			cout << MAGENTA "Printing out LMA0-B0t values before copying..." RESET << endl;
+			cout << BLUE "LmaoBot name:		" << e->getName() << RESET << endl;
+			cout << BLUE "LmaoBot HP:		" << e->getHealthPoints() << RESET << endl;
+			cout << BLUE "LmaoBot Attack Dmg:	" << e->getAttackDamage() << RESET << endl;
+			cout << endl;
+
 			cout << MAGENTA "Assigning LMA0-B0t to CL4P-L3K: " << e->getName() << "..." RESET << endl;
 			*e = *d;
 			cout << endl;
 
-			cout << MAGENTA "Printing out LMA0-B0t values..." RESET << endl;
+			cout << MAGENTA "Printing out LMA0-B0t values after copying..." RESET << endl;
 			cout << BLUE "LmaoBot name:		" << e->getName() << RESET << endl;
 			cout << BLUE "LmaoBot HP:		" << e->getHealthPoints() << RESET << endl;
 			cout << BLUE "LmaoBot Attack Dmg:	" << e->getAttackDamage() << RESET << endl;
@@ -109,7 +115,7 @@ int	main()
 			delete d;
 			cout << endl;
 
-			cout << MAGENTA "Printing out LMA0-B0t values..." RESET << endl;
+			cout << MAGENTA "Printing out LMA0-B0t values after deleting..." RESET << endl;
 			cout << BLUE "LmaoBot name:		" << e->getName() << RESET << endl;
 			cout << BLUE "LmaoBot HP:		" << e->getHealthPoints() << RESET << endl;
 			cout << BLUE "LmaoBot Attack Dmg:	" << e->getAttackDamage() << RESET << endl;
