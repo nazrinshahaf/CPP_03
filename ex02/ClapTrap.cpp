@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 10:10:01 by nfernand          #+#    #+#             */
-/*   Updated: 2022/05/05 16:32:22 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:58:27 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,94 +19,126 @@ using std::endl;
 
 ClapTrap::ClapTrap(string name)
 {
-	setName(name);
-	cout << "Allow me to introduce myself - I am a" BLUE " <CL4P-TP> " RESET
+	this->_name = name;
+	cout << "Allow me to introduce myself - I am a " BLUE "<CL4P-TP> " RESET
 		"steward bot, but my friends call me " YELLOW "<"
 		<< name << ">" RESET "." << endl;
-	setHealthPoints(10);
-	setEnergyPoints(10);
-	setAttackDamage(0);
+	this->_healh_points = 10;
+	this->_energy_points = 10;
+	this->_attack_damage = 0;
 	cout << endl;
 }
 
 ClapTrap::~ClapTrap()
 {
- 	cout << RED "I'M DEAD I'M DEAD OHMYGOD I'M DEAD!" RESET << endl;
+	cout << RED "I'M DEAD I'M DEAD OHMYGOD I'M DEAD! - [Claptrap]" RESET << endl;
 }
 
-void	ClapTrap::attack(const string &target)
+ClapTrap::ClapTrap(ClapTrap const &tocopy)
 {
-	if (this->getHealthPoints() > 0 && this->getEnergyPoints() > 0)
+	cout << GREEN "Default Copy Constructor Called" RESET << endl;
+	this->_name = tocopy.getName();
+	this->_healh_points = tocopy.getHealthPoints();
+	this->_energy_points = tocopy.getEnergyPoints();
+	this->_attack_damage = tocopy.getAttackDamage();
+}
+
+ClapTrap	&ClapTrap::operator=(ClapTrap const &tocopy)
+{
+	cout << GREEN "Default Copy Assignment Operator Called" RESET << endl;
+	this->_name = tocopy.getName();
+	this->_healh_points = tocopy.getHealthPoints();
+	this->_energy_points = tocopy.getEnergyPoints();
+	this->_attack_damage = tocopy.getAttackDamage();
+	return (*this);
+}
+
+void	ClapTrap::attack(string const &target)
+{
+	if (this->_healh_points > 0 && this->_energy_points > 0)
 	{
-		cout << "CL4P-TP" YELLOW " <" << this->getName() << "> " RESET "attacks CL4P-TP " YELLOW "<" << target << 
-			"> " RESET "causing " RED << this->getAttackDamage() << RESET " points of damage" << endl;
-		this->setEnergyPoints(this->getEnergyPoints() - 1);
-		if (this->getEnergyPoints() == 0)
-			cout << "Who needs energy points anyway, am I right?" << endl;
+		cout << "CL4P-TP" YELLOW " <" << this->_name << "> " RESET "attacks CL4P-TP " YELLOW "<" << target <<
+			"> " RESET "causing " RED << this->_attack_damage << RESET " points of damage" << endl;
+		this->_energy_points--;
+		if (this->_energy_points == 0)
+			cout << MAGENTA "Who needs energy points anyway, am I right?" RESET << endl;
 	}
+	else
+		cout << MAGENTA "Who needs energy points anyway, am I right?" RESET << endl;
 	//target.takeDamage(this->getAttackDamage);
 }
 
 void	ClapTrap::takeDamage(unsigned int value)
 {
-	if (this->getHealthPoints() > 0)
+	if (this->_healh_points > 0)
 	{
-		this->setHealthPoints(this->getHealthPoints() - value);
-		cout << "CL4P-TP" << this->getName() << "takes " << value 
-			<< "points of damage" << endl;
+		this->_healh_points -= value;
+		if (this->_healh_points < 0)
+			this->_healh_points = 0;
+		cout << "CL4P-TP" << this->_name << "takes " RED << value
+			<< RESET " points of damage" << endl;
+		if (this->_healh_points <= 0)
+			cout << MAGENTA "Anddddd I'm dead" RESET << endl;
 	}
+	else
+		cout << MAGENTA "ARRRGHHH I'M ALREADY DEADDDDDDDD" RESET << endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int value)
 {
-	if (this->getHealthPoints() > 0 && this->getEnergyPoints() > 0)
+	if (this->_healh_points	> 0 && this->_energy_points > 0)
 	{
 		cout << "Sweet life juice! ";
-		cout << "CL4P-TP " YELLOW "<" << this->getName() << "> " RESET "heals for " GREEN << value << "." RESET << endl;
-		this->setHealthPoints(this->getHealthPoints() + value);
-		this->setEnergyPoints(this->getEnergyPoints() - 1);
+		cout << "CL4P-TP " YELLOW "<" << this->_name << "> " RESET "heals for " GREEN << value << "." RESET << endl;
+		this->_healh_points += value;
+		this->_energy_points--;
 		if (this->getEnergyPoints() == 0)
 			cout << MAGENTA "Who needs energy points anyway, am I right?" RESET << endl;
 	}
+	else
+		cout << MAGENTA "Who needs energy points anyway, am I right?" RESET << endl;
 }
 
-string	ClapTrap::getName()
+string	ClapTrap::getName(void) const
 {
 	return (this->_name);
 }
 
-int		ClapTrap::getHealthPoints()
+int		ClapTrap::getHealthPoints(void) const
 {
 	return (this->_healh_points);
 }
 
-int		ClapTrap::getEnergyPoints()
+int		ClapTrap::getEnergyPoints(void) const 
 {
 	return (this->_energy_points);
 }
 
-int		ClapTrap::getAttackDamage()
+int		ClapTrap::getAttackDamage(void) const
 {
 	return (this->_attack_damage);
 }
 
-void	ClapTrap::setName(string name)
+void	ClapTrap::setName(string const name)
 {
+	cout << YELLOW "<"<< this->_name << "> " RESET "name has been set to " RED << name << RESET <<  endl;
 	this->_name = name;
 }
 
 void	ClapTrap::setHealthPoints(unsigned int value)
 {
+	cout << YELLOW "<"<< this->_name << "> " RESET "health points has been set to " RED << value << RESET <<  endl;
 	this->_healh_points = value;
 }
 
 void	ClapTrap::setEnergyPoints(unsigned int value)
 {
+	cout << YELLOW "<"<< this->_name << "> " RESET "energy points has been set to " RED << value << RESET <<  endl;
 	this->_energy_points = value;
 }
 
 void	ClapTrap::setAttackDamage(unsigned int value)
 {
-	cout << YELLOW "<"<< this->getName() << "> " RESET "attack damage has been set to " RED << value << RESET <<  endl;
+	cout << YELLOW "<"<< this->_name << "> " RESET "attack damage has been set to " RED << value << RESET <<  endl;
 	this->_attack_damage = value;
 }
