@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 10:10:17 by nfernand          #+#    #+#             */
-/*   Updated: 2022/05/05 10:25:40 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/05/06 09:49:44 by nazrinsha        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,15 @@ class	ClapTrap
 		void	setEnergyPoints(unsigned int value);
 		void	setAttackDamage(unsigned int value);
 
-	private:
+	protected:
+		ClapTrap(void);
+
 		string	_name;
 		int		_healh_points;
 		int		_energy_points;
 		int		_attack_damage;
+
+	private:
 };
 
 #endif
