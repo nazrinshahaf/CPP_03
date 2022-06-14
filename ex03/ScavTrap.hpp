@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 11:58:15 by nfernand          #+#    #+#             */
-/*   Updated: 2022/06/13 18:08:22 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:53:13 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,24 @@ class	ScavTrap: virtual public ClapTrap
 {
 	public:
 		ScavTrap(string name);
+		ScavTrap(ScavTrap const &tocopy);
 		~ScavTrap();
-	
+
+		ScavTrap	&operator=(ScavTrap const &tocopy);
 		void	guardGate(void);
-		void	attack(const string &target, const string name);
-	
+
+		bool	getGuardGateMode(void) const;
+		void	setGuardGateMode(bool value);
+
+		void    attack(string const &target, string const &name);
+
 	protected:
-		ScavTrap(void);
+		ScavTrap();
+
+		string	_name;
+		int		_healh_points;
+		int		_energy_points;
+		int		_attack_damage;
 
 	private:
 		bool	_guard_gate_mode;

@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 10:34:59 by nfernand          #+#    #+#             */
-/*   Updated: 2022/06/13 18:14:56 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/14 15:08:44 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,11 @@ int	main()
 	DiamondTrap	diamond_trap("DAN-TRP");
 
 	cout << MAGENTA "Printing out " << diamond_trap.getName() << "\'s stats..." RESET << endl;
-	cout << "Name: " << diamond_trap.getName() << endl;
-	cout << "Attack Damage: " << diamond_trap.getAttackDamage() << endl;
-	cout << "Hit Points: " << diamond_trap.getHealthPoints() << endl;
-	cout << "Energy Points: " << diamond_trap.getEnergyPoints() << endl;
-	//cout << endl;
-	//diamond_trap.attack("CLAP-9000");
-	//cout << endl;
+	diamond_trap.whoAmI();
+	cout << endl;
+
+	cout << MAGENTA "Attacking a CLAP-9000 bot..." RESET << endl;
+	diamond_trap.attack("CLAP-9000");
+	cout << endl;
 	//diamond_trap.whoAmI();
 }
