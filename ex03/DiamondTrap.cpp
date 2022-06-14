@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:52:40 by nfernand          #+#    #+#             */
-/*   Updated: 2022/06/14 15:08:31 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/14 15:58:32 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ DiamondTrap::DiamondTrap(string name)
 
 DiamondTrap::~DiamondTrap()
 {
-	cout << RED "Argh arghargh death gurgle gurglegurgle urgh... death." RESET << endl;
+	cout << RED "Argh arghargh death gurgle gurglegurgle urgh... death. - [DiamondTrap]" RESET << endl;
 }
 
 void	DiamondTrap::attack(const string &target)
