@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:09:45 by nfernand          #+#    #+#             */
-/*   Updated: 2022/06/13 18:02:33 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/14 15:59:34 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ FragTrap::FragTrap(string name): ClapTrap(name)
 
 FragTrap::~FragTrap()
 {
-	cout << RED "I'm too pretty to die!" RESET << endl;
+	cout << RED "I'm too pretty to die! - [FragTrap]" RESET << endl;
 }
 
 FragTrap::FragTrap(FragTrap const &tocopy) : ClapTrap(tocopy.getName())
